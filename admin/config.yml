@@ -1,0 +1,24 @@
+backend:
+  name: git-gateway
+  accept_roles:
+    - admin
+    - editor
+  site_domain: stupefied-pasteur-4f4a2c.netlify.com
+
+media_folder: "images/uploads"
+
+collections:
+  - name: "artigos" # Used in routes, e.g., /admin/collections/blog
+    label: "Artigos" # Used in the UI
+    folder: "content/blog/" # The path to the folder where the documents are stored
+    path: '{{slug}}/index'
+    preview_path: blog/{{slug}}
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Lead", name: "lead", widget: "string"}
+      - {label: "Description", name: "description", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Body", name: "body", widget: "markdown"}
