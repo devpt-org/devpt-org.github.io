@@ -2,6 +2,13 @@
   border-top: 1px solid $gray-200;
   padding-top: 1.125rem;
   padding-bottom: 1.125rem;
+  background-color: $white;
+}
+
+body.dark {
+  .footer {
+    background-color: var(--gray-dark);
+  }
 }
 
 .footer ul {

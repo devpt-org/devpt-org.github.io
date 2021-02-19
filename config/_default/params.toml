@@ -36,10 +36,10 @@ portraitPhotoWidths = [800, 700, 600, 500]
 lqipWidth = "20x"
 
 # Footer
-footer = "Powered by <a href=\"https://gohugo.io/\">Hugo</a> and <a href=\"https://getdoks.org/\">Doks</a>"
+footer = "Queres juntar-te à comunidade? <a class=\"alert-link\" href=\"https://discord.gg/52apEBYQb2\" target=\"_blank\">Entra no Discord</a>!"
 
 # Alert
-alert = true
+# alert = true
 alertText = "Queres juntar-te à comunidade? <a class=\"alert-link\" href=\"https://discord.gg/52apEBYQb2\" target=\"_blank\">Entra no Discord</a>!"
 
 # Edit Page

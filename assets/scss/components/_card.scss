@@ -1,0 +1,18 @@
+.hero-card {
+  box-shadow: 0 0 10px 0 rgba(39, 49, 65, 0.2);
+  border: none;
+  border-radius: 4px;
+
+  &__img {
+    min-height: 255px;
+    background-color: $gray-200;
+  }
+}
+
+body.dark {
+  .hero-card {
+    &__img {
+      background-color: $gray-800;
+    }
+  }
+}

@@ -1,51 +1,34 @@
-{{ define "main" }}
-<section class="section container-fluid mt-n3 pb-3">
+{{ define "hero"}}
+<section class="hero section container-fluid mt-n3 pb-3">
   <div class="row justify-content-center">
-    <div class="col-lg-12 text-center">
-      <h1 class="mt-0">{{ .Title }}</h1>
+    <div class="col-lg-12 text-start">
+      <h1 class="mt-0" class="hero-title">{{ .Title }}</h1>
     </div>
-    <div class="col-lg-9 col-xl-8 text-center">
+    <div class="col-lg-12 text-start" class="hero-message">
       <p class="lead">{{ .Params.lead | safeHTML }}</p>
-      <a class="btn btn-primary btn-lg px-4 mb-2" href="https://github.com/devpt-org" role="button">Começar a colaborar</a>
+      <a class="btn btn-secondary btn-lg px-4 mb-2" href="https://github.com/devpt-org" role="button">Começar a colaborar</a>
       <p class="meta">Todos os projetos devPT são Open-Source, com licença MIT.</p>
     </div>
   </div>
 </section>
 {{ end }}
 
-{{ define "sidebar-prefooter" }}
+{{ define "main" }}
 <section class="section section-sm">
   <div class="container">
-    <div class="row justify-content-center text-center">
-      <div class="col-lg-5">
-        <h2 class="h4">Social</h2>
-        <p>Facilitar a socialização e troca de experiência de developers e similares portugueses ou a residir em território nacional.</p>
-      </div>
-      <div class="col-lg-5">
-        <h2 class="h4">Open-Source</h2>
-        <p>Criação de projetos e ferramentas utilitárias open-source e de fins não lucrativos de forma a facilitar e organizar o acesso a dados públicos.</p>
-      </div>
-      <div class="col-lg-5">
-        <h2 class="h4">Progressão de carreira</h2>
-        <p>Fomentar a partilha de oportunidades de colaboração, emprego e discussão sobre carreiras.</p>
-      </div>
-    </div>
-    <div class="row justify-content-center text-center">
-      <div class="col-lg-5">
-        <h2 class="h4">Showcase</h2>
-        <p>Ajudar à partilha de projetos de índole pessoal.</p>
-      </div>
-      <div class="col-lg-5">
-        <h2 class="h4">All-Around Dev</h2>
-        <p>Abranger todo o tipo de desenvolvimento, seja Web, Mobile, IoT ou Game Dev.</p>
-      </div>
-      <div class="col-lg-5">
-        <h2 class="h4">Meetups</h2>
-        <p>Juntar os developers em meetups online a cada dois meses para promover a troca de experiência em contexto mais próximo.</p>
-      </div>
+    <div class="row justify-content-center">
+      {{ range $.Site.Data.homepage.hero.cards }}
+        <div class="col-lg-5 d-flex align-items-stretch">
+          {{ partial "hero/section.html" . }}
+        </div>
+      {{ end }}
     </div>
   </div>
 </section>
+{{ end }}
+
+{{ define "sidebar-prefooter" }}
+
 {{ end }}
 
 {{ define "sidebar-footer" }}
