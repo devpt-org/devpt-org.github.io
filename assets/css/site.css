@@ -1,0 +1,7 @@
+.ui-body {
+  @apply dark:bg-gray-500 flex flex-col min-h-screen sm:pt-16;
+}
+
+a {
+  @apply text-blue-700 dark:text-white-50 underline hover:text-blue-900;
+}

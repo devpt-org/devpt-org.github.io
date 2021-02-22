@@ -1,14 +1,39 @@
-{{ define "main" }}
-<div class="row justify-content-center">
-  <div class="col-md-12 col-lg-10 col-xl-8">
-    <article>
-      <div class="blog-header">
-        <h1>{{ .Title }}</h1>
-        {{ partial "main/blog-meta.html" . }}
+{{ define "main"}}
+
+<div class="ui-article-container">
+  <div class="ui-article-content">
+    {{ partial "breadcrumb/breadcrumb.html" . }}
+
+    <h1 class="ui-article__title">{{ .Title }}</h1>
+
+    <div class="ui-article" style="background-image: linear-gradient(gray, rgb(19, 17, 17)), url('{{ .Params.featured_image }}')">
+      <div class="ui-article__user">
+        <img class="ui-user-avatar" src="{{(index .Params.contributors_avatar 0)}}" alt="">
+
+        <span class="ui-user-avatar__name">{{(index .Params.contributors 0)}}</span>
       </div>
-      <p class="lead">{{ .Params.lead | safeHTML }}</p>
-      {{ .Content }}
-    </article>
+
+      <span class="ui-blog-article__date">
+        <i class="far fa-calendar-alt"></i>
+
+        <span class="ml-2">{{ .Date.Format "2006-01-02" }}</span>
+      </span>
+    </div>
+
+    <section class="p-6 mt-20">
+
+      <div class="flex flex-col">
+        <article class="text-lg font-light dark:text-white-50">
+          {{ .Content }}
+        </article>
+      </div>
+    </section>
   </div>
 </div>
 {{ end }}
+
+
+{{ define "more"}}
+<section class="h-96 article-anoucement"></section>
+{{ end }}
+

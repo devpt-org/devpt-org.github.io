@@ -1,0 +1,54 @@
+.ui-nav {
+  @apply sm:fixed sm:top-0 w-full px-2 sm:px-6 lg:px-8;
+  @apply bg-white-50 dark:bg-gray-500;
+  z-index: 10;
+}
+
+.ui-nav__container {
+  @apply relative flex items-center justify-between h-16;
+}
+
+.ui-nav-mobile {
+  @apply absolute inset-y-0 left-0 flex items-center sm:hidden;
+}
+
+.ui-nav-mobile__button {
+  @apply inline-flex items-center justify-center p-2 rounded-md text-gray-400;
+  @apply hover:text-white-50 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white-50;
+}
+
+.ui-nav-menu {
+  @apply flex-1 flex items-center justify-center sm:items-stretch sm:justify-start;
+}
+
+.ui-nav-menu__logo {
+  @apply flex-shrink-0 flex items-center;
+}
+
+.ui-nav-menu__desktop {
+  @apply hidden sm:block sm:ml-6;
+}
+
+.ui-nav-menu__link {
+  @apply px-3 py-2 rounded-md text-sm font-medium;
+  @apply text-gray-800 dark:text-gray-100 hover:text-blue-500;
+}
+
+.ui-nav-menu__link-active {
+  @apply bg-blue-500 text-white-50;
+}
+
+.ui-nav-menu__social {
+  @apply absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0;
+}
+
+.ui-nav-menu__social-link {
+  @apply p-1 text-gray-400 hover:text-gray-800 dark:hover:text-gray-100;
+  @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white-50;
+  cursor: pointer;
+}
+
+.ui-nav__shadow {
+  @apply shadow;
+  @apply dark:border-black-900 border border-solid border-transparent;
+}

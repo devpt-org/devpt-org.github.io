@@ -1,31 +1,38 @@
-<!doctype html>
-<html lang="{{ .Site.LanguageCode | default "en" }}">
-  {{ partial "head/head.html" . }}
-  {{ if eq .Kind "home" -}}
+<!DOCTYPE html>
+<html lang='{{ .Site.LanguageCode | default "en"}}'>
+    {{ partial "head/head.html" . }}
+    {{ if eq .Kind "home" -}}
     {{ .Scratch.Set "class" "home" -}}
-  {{ else if eq .Kind "404" -}}
-    {{ .Scratch.Set "class" "error404" -}}
-  {{ else if eq .Kind "page" -}}
-    {{ .Scratch.Set "class" .Type -}}
-    {{ .Scratch.Add "class" " single" -}}
-  {{ else -}}
-    {{ .Scratch.Set "class" .Type -}}
-    {{ .Scratch.Add "class" " list" -}}
-  {{ end -}}
-  <body class="{{ .Scratch.Get "class" }}">
-    {{ partial "header/header.html" . }}
-    {{ block "hero" . }}{{ end }}
-    <div class="wrap container" role="document">
-      <div class="content">
-        {{ block "main" . }}{{ end }}
-      </div>
-    </div>
-    {{ block "sidebar-prefooter" . }}{{ end }}
-    {{ block "sidebar-footer" . }}{{ end }}
-    {{ partial "footer/footer.html" . }}
-    {{ if and .IsHome .Site.Params.alert }}
-      {{ partial "footer/alert.html" . }}
-    {{ end }}
-    {{ partial "footer/script-footer.html" . }}
-  </body>
+    {{ else if eq .Kind "404" -}}
+      {{ .Scratch.Set "class" "error404" -}}
+    {{ else if eq .Kind "page" -}}
+      {{ .Scratch.Set "class" .Type -}}
+      {{ .Scratch.Add "class" " single" -}}
+    {{ else -}}
+      {{ .Scratch.Set "class" .Type -}}
+      {{ .Scratch.Add "class" " list" -}}
+    {{ end -}}
+    <body class="ui-body {{ .Scratch.Get "class" }}">
+
+        {{- block "header" . }}
+          {{- partial "header/header.html" . -}}
+        {{- end }}
+
+        {{- block "hero" . }}{{- end }}
+
+        {{- block "main" . }}{{- end }}
+
+        {{- block "more" . }}
+
+        {{- end }}
+
+        {{- block "pre-footer" . }}
+          <!--{{- partial "development/parameters.html" . -}}-->
+        {{- end }}
+
+        {{- block "footer" . }}
+          {{- partial "footer/footer.html" . -}}
+        {{- end }}
+        {{ partial "head/script-body.html"}}
+    </body>
 </html>

@@ -1,4 +1,3 @@
-functions
-node_modules
-public
-resources
+/node_modules
+temp/
+resources/

@@ -8,17 +8,17 @@ description = "devPT é uma Comunidade de Developers Portugueses com o objetivo 
 
 ## Open Graph + Twitter Cards
 images = ["devpt.png"]
-twitterSite = "henkverlinde"
-twitterCreator = "henkverlinde"
-facebookAuthor = "verlinde.henk"
-facebookPublisher = "verlinde.henk"
+twitterSite = "devpt"
+twitterCreator = "devpt"
+facebookAuthor = "devpt"
+facebookPublisher = "devpt"
 ogLocale = "pt_PT"
 
 ## JSON-LD
 schemaType = "Organization"
 schemaLogo = "logo-devpt.png"
-schemaTwitter = "https://twitter.com/henkverlinde"
-schemaLinkedIn = "https://www.linkedin.com/in/henkverlinde/"
+schemaTwitter = "https://twitter.com/devpt"
+schemaLinkedIn = "https://www.linkedin.com/in/devpt/"
 schemaGitHub = "https://github.com/devpt-org"
 schemaSection = "blog"
 
@@ -36,10 +36,10 @@ portraitPhotoWidths = [800, 700, 600, 500]
 lqipWidth = "20x"
 
 # Footer
-footer = "Queres juntar-te à comunidade? <a class=\"alert-link\" href=\"https://discord.gg/52apEBYQb2\" target=\"_blank\">Entra no Discord</a>!"
+footer = "Powered by <a href=\"https://gohugo.io/\">Hugo</a> and <a href=\"https://getdoks.org/\">Doks</a>"
 
 # Alert
-# alert = true
+alert = true
 alertText = "Queres juntar-te à comunidade? <a class=\"alert-link\" href=\"https://discord.gg/52apEBYQb2\" target=\"_blank\">Entra no Discord</a>!"
 
 # Edit Page

@@ -1,0 +1,30 @@
+.ui-hero__container {
+  @apply flex sm:flex-row flex-col;
+  @apply dark:bg-gray-500;
+}
+
+.ui-hero__image {
+  @apply sm:pl-12 p-2;
+}
+
+.ui-hero__message {
+  @apply flex flex-col pr-6 pl-6 mb-6 sm:mb-0 items-start justify-center;
+}
+
+.ui-hero__title {
+  @apply text-3xl text-orange-500 mb-3;
+}
+
+.ui-hero__slogan {
+  @apply text-5xl font-extrabold text-gray-800 mb-3;
+  @apply dark:text-white-100;
+}
+
+.ui-hero__descriptor {
+  @apply text-lg mb-4;
+  @apply dark:text-white-50;
+}
+
+.ui-hero__button {
+  @apply inline-flex items-center justify-center p-2 rounded-md bg-blue-500 text-white-50 no-underline;
+}

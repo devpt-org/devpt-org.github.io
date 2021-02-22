@@ -1,35 +1,70 @@
-<div class="header-bar fixed-top"></div>
-<header class="navbar fixed-top navbar-expand-md navbar-light">
-  <div class="container">
-    <input class="menu-btn order-0" type="checkbox" id="menu-btn">
-    <label class="menu-icon d-md-none" for="menu-btn"><span class="navicon"></span></label>
-    <a class="navbar-brand order-1 order-md-0 mr-auto" href="{{ .Site.BaseURL | absURL }}">{{ .Site.Params.Title }}</a>
-    <button id="mode" class="btn btn-link order-2 order-md-4" type="button" aria-label="Toggle mode">
-      <span class="toggle-dark"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
-      <span class="toggle-light"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span>
-    </button>
-    <ul class="navbar-nav social-nav order-3 order-md-5">
+<nav class="ui-nav" x-data="{ open: false, dark: false }" x-init="isDarkMode() ? dark = true : dark = false" >
+  <div class="ui-nav__container">
+
+    <div class="ui-nav-mobile">
+      <!-- Mobile menu button-->
+      <button @click="open = !open" type="button" class="ui-nav-mobile__button" aria-controls="mobile-menu" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+
+        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+
+        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="ui-nav-menu">
+      <div class="ui-nav-menu__logo">
+        <a href="{{ .Site.BaseURL | absURL }}">
+          <img class="block lg:hidden h-8 w-auto" src="/images/logo-mini-blue.svg" alt="devPT">
+
+          <img x-show.immediate="!dark" class="hidden lg:block h-8 w-auto" src="/images/logo-blue.svg" alt="devPT">
+
+          <img x-show.immediate="dark" class="hidden lg:block h-8 w-auto" src="/images/logo-blue-white.svg" alt="devPT">
+        </a>
+      </div>
+
+      <div class="ui-nav-menu__desktop">
+        <div class="flex space-x-4">
+          <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+          {{- $current := . -}}
+          {{ range .Site.Menus.main -}}
+            {{- $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) -}}
+            {{- $active = or $active (eq .Name $current.Title) -}}
+            {{- $active = or $active (and (eq .Name "Blog") (eq $current.Section "blog" "authors")) -}}
+            <a href="{{ .URL | absURL }}" class="{{ if $active }}ui-nav-menu__link-active{{end}} ui-nav-menu__link">{{ .Name }}</a>
+          {{ end -}}
+        </div>
+      </div>
+    </div>
+
+    <div class="ui-nav-menu__social">
       {{ range .Site.Menus.social -}}
-        <li class="nav-item">
-          <a class="nav-link" href="{{ .URL | absURL }}">{{ .Pre | safeHTML }}<span class="ml-2 sr-only">{{ .Name | safeHTML }}</span></a>
-        </li>
+        <a class="ui-nav-menu__social-link" href="{{ .URL | absURL }}">{{ .Pre | safeHTML }}</a>
       {{ end -}}
-    </ul>
-    <div class="collapse navbar-collapse order-4 order-md-1">
-      <ul class="navbar-nav main-nav mr-auto order-5 order-md-2">
-        {{- $current := . -}}
-        {{ range .Site.Menus.main -}}
-          {{- $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) -}}
-          {{- $active = or $active (eq .Name $current.Title) -}}
-          {{- $active = or $active (and (eq .Name "Docs") (eq $current.Section "docs")) -}}
-          {{- $active = or $active (and (eq .Name "Guides") (eq $current.Section "guides")) -}}
-          {{- $active = or $active (and (eq .Name "Blog") (eq $current.Section "blog" "authors")) -}}
-          <li class="nav-item{{ if $active }} active{{ end }}">
-            <a class="nav-link" href="{{ .URL | absURL }}">{{ .Name }}</a>
-          </li>
-        {{ end -}}
-      </ul>
-      <div class="break order-6 d-md-none"></div>
+
+      <a @click="dark = !dark; useToggleDarkMode()" class="ui-nav-menu__social-link">
+        <i x-show="dark" class="far fa-sun"></i>
+
+        <i x-show="!dark" class="far fa-moon"></i>
+      </a>
     </div>
   </div>
-</header>
+
+  <!-- Mobile menu, show/hide based on menu state. -->
+  <div id="mobile-menu" x-show="open">
+    <div class="px-2 pt-2 pb-3 space-y-1">
+      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+      {{- $current := . -}}
+      {{ range .Site.Menus.main -}}
+        {{- $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) -}}
+        {{- $active = or $active (eq .Name $current.Title) -}}
+        {{- $active = or $active (and (eq .Name "Blog") (eq $current.Section "blog" "authors")) -}}
+        <a href="{{ .URL | absURL }}" class="{{ if $active }}ui-nav-menu__link-active{{end}} ui-nav-menu__link">{{ .Name }}</a>
+      {{ end -}}
+    </div>
+  </div>
+</nav>

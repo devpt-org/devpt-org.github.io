@@ -1,0 +1,32 @@
+.ui-article {
+  height: calc(40vh);
+  background-blend-mode: soft-light;
+  @apply m-6 bg-cover bg-no-repeat flex justify-between flex-col relative;
+  background-blend-mode: soft-light;
+}
+
+.ui-article__user {
+  @apply flex space-x-2 flex-initial absolute justify-items-end -bottom-10 left-10;
+}
+
+.article-anoucement {
+  @apply bg-cover bg-no-repeat flex justify-between flex-col;
+  background-blend-mode: soft-light;
+  background-image: url(/images/blog/city-sunrise.svg);
+  background-position: 95% 60%;
+}
+
+.ui-article-container {
+  @apply container mx-auto my-20;
+  max-width: 768px;
+}
+
+.ui-article-content {
+  @apply p-6 rounded-lg;
+  -webkit-box-shadow: 0px 9px 24px 0px rgb(151, 160, 204, 25%);
+  box-shadow: 0px 9px 24px 0px rgb(151, 160, 204, 12%);
+}
+
+.ui-article__title {
+  @apply p-6 text-5xl dark:text-white-50 mb-8;
+}
