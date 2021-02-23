@@ -3,23 +3,23 @@
 ## Homepage
 title = "devPT"
 titleSeparator = "-"
-titleAddition = "Modern Documentation Theme"
-description = "Doks is a Hugo theme helping you build modern documentation websites that are secure, fast, and SEO-ready — by default."
+titleAddition = "Comunidade de Developers Portugueses"
+description = "devPT é uma Comunidade de Developers Portugueses com o objetivo de facilitar a partilha de experiências, projetos e oportunidades de emprego."
 
 ## Open Graph + Twitter Cards
-images = ["doks.png"]
+images = ["devpt.png"]
 twitterSite = "henkverlinde"
 twitterCreator = "henkverlinde"
 facebookAuthor = "verlinde.henk"
 facebookPublisher = "verlinde.henk"
-ogLocale = "en_US"
+ogLocale = "pt_PT"
 
 ## JSON-LD
 schemaType = "Organization"
-schemaLogo = "logo-doks.png"
+schemaLogo = "logo-devpt.png"
 schemaTwitter = "https://twitter.com/henkverlinde"
 schemaLinkedIn = "https://www.linkedin.com/in/henkverlinde/"
-schemaGitHub = "https://github.com/h-enk"
+schemaGitHub = "https://github.com/devpt-org"
 schemaSection = "blog"
 
 ## Sitelinks Search Box
@@ -43,5 +43,5 @@ footer = "Queres juntar-te à comunidade? <a class=\"alert-link\" href=\"https:/
 alertText = "Queres juntar-te à comunidade? <a class=\"alert-link\" href=\"https://discord.gg/52apEBYQb2\" target=\"_blank\">Entra no Discord</a>!"
 
 # Edit Page
-docsRepo = "https://github.com/h-enk/doks"
+docsRepo = "https://github.com/devpt-org/devpt-org.github.io"
 editPage = false
