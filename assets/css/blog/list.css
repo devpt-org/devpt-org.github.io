@@ -3,7 +3,7 @@
 }
 
 .ui-blog-card {
-  @apply bg-cover bg-no-repeat flex justify-between flex-col;
+  @apply bg-cover bg-no-repeat flex justify-between flex-col no-underline cursor-pointer;
   background-blend-mode: soft-light;
 }
 
@@ -79,7 +79,7 @@
 .ui-blog-article:hover .ui-blog-card,
 .ui-blog-article:focus .ui-blog-card {
   transform: scale(1.1);
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
 .ui-blog-article__user .ui-user-avatar {
@@ -89,4 +89,3 @@
 .ui-blog-article__date {
   @apply absolute top-10 right-10 md:bottom-10 md:right-10 text-white-50;
 }
-

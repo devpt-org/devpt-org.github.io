@@ -12,6 +12,6 @@
 
 <div class="p-6 text-sm text-blue-700 dark:text-white-50">
   {{ range $.Scratch.Get "siteBreadcrumbs" }}
-  <a class="no-underline" href="{{ .url }}"> / {{ .name }}</a>
+  <a class="no-underline capitalize" href="{{ .url }}" data-breadcrumb="{{ .name}}"></a>
   {{ end }}
 </div>
