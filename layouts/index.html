@@ -76,7 +76,7 @@
   </div>
   {{ $random := shuffle $.Site.Data.users | first 50 }}
   {{ range $random }}
-   <img class="ui-community__avatar" src="{{ .avatar }}" alt="{{ .username }}">
+    <img class="ui-community__avatar" src="{{ .avatar }}">
   {{ end }}
 </section>
 {{ end }}

@@ -43,7 +43,7 @@
 .ui-community__avatar {
   display: inline-flex;
   width: 100%;
-  @apply bg-blue-500 dark:bg-gray-700;
+  background-image: url(/images/logo-mini-blue.svg);
 }
 
 .dark .ui-community__cover {
