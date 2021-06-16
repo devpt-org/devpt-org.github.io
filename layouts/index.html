@@ -1,42 +1,82 @@
-{{ define "hero"}}
-<section class="hero section container-fluid mt-n3 pb-3">
-  <div class="row justify-content-center">
-    <div class="col-lg-12 text-start">
-      <h1 class="mt-0" class="hero-title">{{ .Title }}</h1>
+{{ define "hero" }}
+<div class="ui-hero">
+  <div class="ui-hero__container">
+    <div class="ui-hero__image">
+      <img  src="/images/d-hero.svg" alt="devPT Hero">
     </div>
-    <div class="col-lg-12 text-start" class="hero-message">
-      <p class="lead">{{ .Params.lead | safeHTML }}</p>
-      <a class="btn btn-secondary btn-lg px-4 mb-2" href="https://github.com/devpt-org" role="button">Começar a colaborar</a>
-      <p class="meta">Todos os projetos devPT são Open-Source, com licença MIT.</p>
+
+    <div class="ui-hero__message">
+      <h4 class="ui-hero__title">Comunidade developers portugueses</h4>
+      <h1 class="ui-hero__slogan">Partilha, participa e comunica.</h1>
+      <p class="ui-hero__descriptor">Somos uma comunidade sem fins lucrativos com foco nos developers portugueses.</p>
+      <a href="https://discord.gg/52apEBYQb2" target="_blank" class="ui-hero__button">Colabora</a>
     </div>
   </div>
-</section>
+</div>
 {{ end }}
 
 {{ define "main" }}
-<section class="section section-sm">
-  <div class="container">
-    <div class="row justify-content-center">
-      {{ range $.Site.Data.homepage.hero.cards }}
-        <div class="col-lg-5 d-flex align-items-stretch">
-          {{ partial "hero/section.html" . }}
-        </div>
-      {{ end }}
+<section class="ui-up-values">
+  <div class="ui-up-values__container">
+    <div class="ui-up-values__grid">
+      <div class="ui-up-values__block">
+        <h2 class="ui-up-values__title">Social</h2>
+        <p class="ui-up-values__descriptor">Facilitar a socialização e troca de experiência de developers e similares portugueses ou a residir em território nacional.</p>
+      </div>
+
+      <div class="ui-up-values__block">
+        <h2 class="ui-up-values__title">Open-Source</h2>
+        <p class="ui-up-values__descriptor">Criação de projetos e ferramentas utilitárias open-source e de fins não lucrativos de forma a facilitar e organizar o acesso a dados públicos.</p>
+      </div>
+
+      <div class="ui-up-values__block">
+        <h2 class="ui-up-values__title">Progressão de carreira</h2>
+        <p class="ui-up-values__descriptor">Fomentar a partilha de oportunidades de colaboração, emprego e discussão sobre carreiras.</p>
+      </div>
+
+      <div class="ui-up-values__figure">
+        <img src="/images/hiking.svg" alt="Hiking">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ui-down-values">
+  <div class="ui-down-values__container">
+    <div class="ui-down-values__grid">
+      <div class="ui-down-values__figure">
+        <img src="/images/nature.svg" alt="Nature">
+      </div>
+
+      <div class="ui-down-values__block">
+        <h2 class="ui-down-values__title">Meetups</h2>
+        <p class="ui-down-values__descriptor">Juntar os developers em meetups online a cada mês para promover a troca de experiência em contexto mais próximo.</p>
+      </div>
+
+      <div class="ui-down-values__block">
+        <h2 class="ui-down-values__title">All-Around Dev</h2>
+        <p class="ui-down-values__descriptor">Abranger todo o tipo de desenvolvimento, seja Web, Mobile, IoT ou Game Dev.</p>
+      </div>
+
+      <div class="ui-down-values__block">
+        <h2 class="ui-down-values__title">Showcase</h2>
+        <p class="ui-down-values__descriptor">Ajudar à partilha de projetos de índole pessoal.</p>
+      </div>
     </div>
   </div>
 </section>
 {{ end }}
 
-{{ define "sidebar-prefooter" }}
-
-{{ end }}
-
-{{ define "sidebar-footer" }}
-<section class="section section-sm container-fluid">
-  <div class="row justify-content-center text-center">
-    <div class="col-lg-9">
-      {{- .Content -}}
-    </div>
+{{ define "more" }}
+<section class="ui-community">
+  <div class="ui-community__cover"></div>
+  <div class="ui-community-message">
+    <h1 class="ui-community__title">A nossa comunidade!</h1>
+    <a class="ui-community__button" href="https://discord.gg/52apEBYQb2" target="_blank">Participa</a>
   </div>
+  {{ $random := shuffle $.Site.Data.users | first 50 }}
+  {{ range $random }}
+   <img class="ui-community__avatar" src="{{ .avatar }}" alt="{{ .username }}">
+  {{ end }}
 </section>
 {{ end }}

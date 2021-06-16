@@ -1,0 +1,7 @@
+{{ $alpine := resources.Get "node_modules/alpine.js" }}
+{{ $fontawesome := resources.Get "node_modules/fontawesome.js" | resources.Minify }}
+{{ $script := resources.Get "js/main.js" }}
+{{ $main := slice $alpine $script | resources.Concat "js/main.js" | resources.Minify }}
+{{ $icon := slice $fontawesome | resources.Concat "js/icons.js" | resources.Minify }}
+<script type="text/javascript" src="{{ $main.RelPermalink }}" defer></script>
+<script type="text/javascript" src="{{ $icon.RelPermalink }}" defer></script>

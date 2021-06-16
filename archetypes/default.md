@@ -1,8 +1,5 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
-description: ""
+author:
+title: {{ replace .Name "-" " " | title }}
 date: {{ .Date }}
-lastmod: {{ .Date }}
-draft: true
-images: []
 ---

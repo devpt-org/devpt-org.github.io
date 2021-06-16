@@ -1,0 +1,80 @@
+.ui-up-values {
+  @apply dark:bg-gray-600 bg-blue-50 bg-right bg-no-repeat bg-contain;
+}
+
+.ui-up-values__container,
+.ui-down-values__container {
+  @apply flex p-6;
+}
+
+.ui-up-values__grid,
+.ui-down-values__grid {
+  @apply grid sm:grid-cols-4 grid-cols-1 gap-4
+}
+
+.ui-up-values__block,
+.ui-down-values__block {
+  @apply flex justify-center flex-col;
+}
+
+.ui-up-values__title,
+.ui-down-values__title {
+  @apply text-2xl mb-4 text-orange-600 font-bold;
+}
+
+.ui-up-values__descriptor,
+.ui-down-values__descriptor {
+  @apply dark:text-white-100 text-gray-600 text-lg;
+}
+
+.ui-down-values {
+  @apply dark:bg-gray-700 bg-white-50 bg-left bg-no-repeat bg-contain;
+}
+
+.ui-up-values__figure,
+.ui-down-values__figure {
+  @apply py-3;
+}
+
+.ui-community {
+  @apply grid grid-cols-10 gap-0 relative;
+}
+
+.ui-community__avatar {
+  display: inline-flex;
+  width: 100%;
+  @apply bg-blue-500 dark:bg-gray-700;
+}
+
+.dark .ui-community__cover {
+  background-color: rgb(0, 0, 0, 75%);
+}
+
+.ui-community__cover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255, 75%);
+}
+
+.ui-community-message {
+  position: absolute;
+  bottom: 30%;
+  right: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.ui-community__title {
+  @apply text-6xl mb-4 text-gray-500 dark:text-white-50 font-bold;
+}
+
+.ui-community__button {
+  @apply inline-flex items-center justify-center p-2 rounded-md bg-blue-500 text-white-50 no-underline shadow-lg;
+}

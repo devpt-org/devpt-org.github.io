@@ -1,0 +1,11 @@
+.pagination {
+  @apply flex justify-center my-8;
+}
+
+.page-item {
+  @apply p-2;
+}
+
+.page-link {
+  @apply no-underline;
+}

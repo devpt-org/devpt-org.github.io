@@ -5,7 +5,7 @@ enableEmoji = true
 enableGitInfo = false
 enableRobotsTXT = true
 languageCode = "en-US"
-paginate = 7
+paginate = 12
 rssLimit = 10
 
 # add redirects/headers
@@ -67,7 +67,8 @@ rel  = "sitemap"
   contributor = "contributors"
 
 [permalinks]
-  blog = "/blog/:title/"
+  blog = "/blog/:slug/"
+  page = "/:slug/"
 
 [module]
   [[module.mounts]]
@@ -77,17 +78,8 @@ rel  = "sitemap"
     source = "static"
     target = "static"
   [[module.mounts]]
-    source = "node_modules/lazysizes"
-    target = "assets/js/vendor/lazysizes"
+    source = "node_modules/alpinejs/dist/alpine.js"
+    target = "assets/node_modules/alpine.js"
   [[module.mounts]]
-    source = "node_modules/instant.page"
-    target = "assets/js/vendor/instant.page"
-  [[module.mounts]]
-    source = "node_modules/lazysizes"
-    target = "assets/js/vendor/lazysizes"
-  [[module.mounts]]
-    source = "node_modules/flexsearch"
-    target = "assets/js/vendor/flexsearch"
-  [[module.mounts]]
-    source = "node_modules/clipboard"
-    target = "assets/js/vendor/clipboard"
+    source = "node_modules/@fortawesome/fontawesome-free/js/all.js"
+    target = "assets/node_modules/fontawesome.js"

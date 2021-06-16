@@ -1,21 +1,112 @@
+{{ define "hero"}}
+
+  {{ partial "breadcrumb/breadcrumb.html" . }}
+
+  {{ $featuredPost := ( where (where .Site.Pages "Type" "blog") ".Params.featured" "=" true )}}
+  {{ $latestBlogPost := ( where (where .Site.Pages "Type" "blog") ".Params.featured" "!=" true ).ByDate }}
+
+  <header class="ui-blog-list">
+      {{ range (first 1 $featuredPost) }}
+        <div onclick="goToURL({{ .Permalink }})" class="ui-blog-card ui-blog__featured shadow-md" style="background-image: linear-gradient(gray, rgb(19, 17, 17)), url('{{ .Params.featured_image }}')">
+          <div class="ui-blog-card__feature">
+            <i class="far fa-star"></i>
+            <span>Destaque</span>
+          </div>
+
+          <div class="ui-blog-card__footer">
+            <div class="ui-blog-card__user">
+              <img class="ui-user-avatar" src="{{(index .Params.contributors_avatar 0)}}" alt="">
+
+              <span class="ui-user-avatar__name">{{(index .Params.contributors 0)}}</span>
+            </div>
+
+            <span class="ui-blog-card__date">
+              <i class="far fa-calendar-alt"></i>
+
+              <span class="ml-2">{{ .Date.Format "2006-01-02" }}</span>
+            </span>
+
+            <div class="ui-blog-card__container">
+              <h1 class="ui-blog-card__title">{{ .Title }}</h1>
+
+              <p class="text-xs truncate">{{ .Description }}</p>
+
+              <a class="ui-blog__more no-underline text-sm" href="{{ .Permalink }}">
+                <i class="far fa-plus-square"></i> Ler
+              </a>
+            </div>
+          </div>
+        </div>
+      {{ end }}
+    <div class="ui-blog-latest">
+        {{ range (first 1 $latestBlogPost) }}
+          <div class="ui-blog-card shadow-md" style="background-image: linear-gradient(gray, rgb(19, 17, 17)), url('{{ .Params.featured_image }}')" onclick="goToURL({{ .Permalink }})">
+            <div class="flex"></div>
+
+            <div class="ui-blog-card__footer">
+              <div class="ui-blog-card__user">
+                <img class="ui-user-avatar" src="{{(index .Params.contributors_avatar 0)}}" alt="">
+
+                <span class="ui-user-avatar__name">{{(index .Params.contributors 0)}}</span>
+              </div>
+
+              <span class="ui-blog-card__date">
+                <i class="far fa-calendar-alt"></i>
+
+                <span class="ml-2">{{ .Date.Format "2006-01-02" }}</span>
+              </span>
+
+              <div class="ui-blog-card__container">
+                <h1 class="ui-blog-card__title">{{ .Title }}</h1>
+
+                <p class="text-xs truncate">{{ .Description }}</p>
+
+                <a class="ui-blog__more no-underline text-sm" href="{{ .Permalink }}">
+                  <i class="far fa-plus-square"></i> Ler
+                </a>
+              </div>
+            </div>
+          </div>
+        {{ end }}
+
+    </div>
+  </header>
+{{ end }}
+
 {{ define "main" }}
-<div class="row justify-content-center">
-  <div class="col-md-12 col-lg-10 col-xl-8">
-    <article>
-      <h1 class="text-center">{{ .Title }}</h1>
-      <div class="text-center">{{ .Content }}</div>
-			<div class="card-list">
-				{{ range .Data.Pages -}}	
-					<div class="card">
-						<div class="card-body">
-							<h2 class="h3"><a class="stretched-link text-body" href="{{ .Permalink }}">{{ .Params.title }}</a></h2>
-							<p>{{ .Params.lead | safeHTML }}</p>
-							{{ partial "main/blog-meta.html" . -}}
-						</div>
-					</div>
-				{{ end -}}
-			</div>
+<hr class="border-gray-50 dark:border-gray-900 my-6">
+
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 p-6">
+  {{ range .Pages }}
+
+    <article class="ui-blog-article rounded-lg">
+
+      <div class="ui-blog-card rounded-lg relative" onclick="goToURL({{ .Permalink }})" style="width: 100%; height: 100%; background-image: linear-gradient(gray, rgb(19, 17, 17)), url('{{ .Params.featured_image }}')">
+        <div class="bg-blue-500" style="height: 4px"></div>
+
+        <span class="ui-blog-article__date">
+          <i class="far fa-calendar-alt"></i>
+
+          <span class="ml-2">{{ .Date.Format "2006-01-02" }}</span>
+        </span>
+
+        <div class="ui-blog-article__user">
+          <img class="ui-user-avatar" src="{{(index .Params.contributors_avatar 0)}}" alt="">
+
+          <div class="flex flex-col">
+            <span class="ui-user-avatar__name text-xs">{{(index .Params.contributors 0)}}</span>
+
+            <a class="ui-blog__more no-underline text-xl text-white-500 truncate" href="{{ .Permalink }}">
+              <i class="far fa-plus-square"></i> {{ .Title }}
+            </a>
+          </div>
+        </div>
+      </div>
     </article>
-  </div>
+  {{ end }}
 </div>
+{{ end }}
+
+{{ define "more" }}
+{{ template "_internal/pagination.html" . }}
 {{ end }}
