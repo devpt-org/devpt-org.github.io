@@ -56,8 +56,9 @@ function decodeURIFromBreadcrumb(anchor, value) {
 }
 
 (function () {
-  const theme = localStorage.getItem('theme');
-  theme === 'light' ? useLightMode() : useDarkMode();
+  // const theme = localStorage.getItem('theme');
+  // theme === 'light' ? useLightMode() : useDarkMode();
+  useLightMode();
 
   const breadcrumbLinks = document.querySelectorAll('a[data-breadcrumb]');
   [...breadcrumbLinks].forEach((anchor) =>
