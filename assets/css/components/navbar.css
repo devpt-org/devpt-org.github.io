@@ -30,12 +30,12 @@
 }
 
 .ui-nav-menu__link {
-  @apply px-3 py-2 rounded-md text-sm font-medium;
+  @apply px-3 py-2 rounded-md text-sm font-medium no-underline;
   @apply text-gray-800 dark:text-gray-100 hover:text-blue-500;
 }
 
-.ui-nav-menu__link-active {
-  @apply bg-blue-500 text-white-50;
+.ui-nav-menu__link.ui-nav-menu__link-active {
+  @apply bg-white-50 text-blue-500;
 }
 
 .ui-nav-menu__social {
