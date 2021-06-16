@@ -23,8 +23,8 @@
 
 .ui-article-content {
   @apply p-6 rounded-lg;
-  -webkit-box-shadow: 0px 9px 24px 0px rgb(151, 160, 204, 25%);
-  box-shadow: 0px 9px 24px 0px rgb(151, 160, 204, 12%);
+  -webkit-box-shadow: 0px 9px 24px 0px rgba(151, 160, 204, 25%);
+  box-shadow: 0px 9px 24px 0px rgba(151, 160, 204, 12%);
 }
 
 .ui-article__title {
