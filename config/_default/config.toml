@@ -8,6 +8,9 @@ languageCode = "en-US"
 paginate = 12
 rssLimit = 10
 
+[build]
+writeStats = true
+
 # add redirects/headers
 [outputs]
 home = ["HTML", "RSS", "REDIRECTS", "HEADERS"]
