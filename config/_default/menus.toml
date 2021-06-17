@@ -7,11 +7,15 @@
   name = "Discord"
   url = "https://discord.gg/52apEBYQb2"
   weight = 30
+  [main.params]
+    target = "_blank"
 
 [[main]]
   name = "Reddit"
   url = "https://reddit.com/r/devpt/"
   weight = 40
+  [main.params]
+      target = "_blank"
 
 [[social]]
   name = "GitHub"
@@ -19,3 +23,5 @@
   url = "https://github.com/devpt-org"
   post = "v0.1.0"
   weight = 20
+  [social.params]
+      target = "_blank"
