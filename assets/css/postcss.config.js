@@ -23,6 +23,6 @@ module.exports = {
             path: [themeDir],
             overrideBrowserslist: ['>1%']
         }),
-        ...(process.env.HUGO_ENVIRONMENT === 'production' ? [purgecss] : [])
+        // ...(process.env.HUGO_ENVIRONMENT === 'production' ? [purgecss] : [])
     ]
 }

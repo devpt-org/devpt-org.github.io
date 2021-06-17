@@ -3,8 +3,9 @@ module.exports = {
   purge: {
     content: ['./layouts/**/*.html'],
     options: {
-      whitelist: [],
-    }
+      safelist: ['dark'],
+    },
+    layers: ['components', 'utilities', 'base']
   },
   theme: {
     colors: {

@@ -33,17 +33,18 @@
   "name": "devpt-hugo-theme",
   "repository": "https://github.com/devpt-org/devpt-org.github.io",
   "scripts": {
-    "build": "hugo --gc --minify",
+    "build": "NODE_ENV=production hugo --gc --minify",
     "build:preview": "npm run build -D -F",
     "clean": "rimraf public resources",
     "lint": "npm run -s lint:scripts && npm run -s lint:markdown",
     "lint:markdown": "markdownlint *.md content/**/*.md",
     "lint:scripts": "eslint assets/js",
     "start": "hugo server --disableFastRender",
+    "start:prod": "NODE_ENV=production hugo server --disableFastRender",
     "precheck": "npm version",
     "check": "hugo version",
     "release": "standard-version",
     "test": "npm run -s lint"
   },
-  "version": "0.0.1"
+  "version": "0.0.2"
 }
