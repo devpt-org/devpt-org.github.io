@@ -5,7 +5,7 @@ lead: "Introduzindo o devPT, a comunidade que quer aumentar a participação Ope
 date: 2020-11-04T09:19:42+01:00
 lastmod: 2020-11-04T09:19:42+01:00
 draft: false
-weight: 1
+weight: 50
 featured: false
 featured_image: "https://source.unsplash.com/67L18R4tW_w/1600x900"
 images: []

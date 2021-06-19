@@ -3,9 +3,11 @@
     "tags": [
       "a",
       "article",
+      "blockquote",
       "body",
       "br",
       "button",
+      "code",
       "div",
       "footer",
       "h1",
@@ -23,9 +25,11 @@
       "noscript",
       "p",
       "path",
+      "pre",
       "script",
       "section",
       "span",
+      "strong",
       "style",
       "svg",
       "title"

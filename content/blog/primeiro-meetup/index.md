@@ -5,7 +5,7 @@ lead: "A comunidade devPT reune-se pela primeira vez no seu servidor Discord. VÃ
 date: 2021-06-15T03:24:42+01:00
 lastmod: 2021-06-15T03:24:42+01:00
 draft: false
-weight: 50
+weight: 1
 featured: true
 featured_image: "https://source.unsplash.com/1-aA2Fadydc/1600x900"
 images: []
