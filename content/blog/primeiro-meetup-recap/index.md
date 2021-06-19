@@ -29,7 +29,7 @@ Tivemos a oportunidade de conhecer mais sobre o projeto devPT, os seus objetivos
 
 <br />O evento pode ser visto ou revisto clicando abaixo 👇<br /><br />
 
-[![devPT - Meetup #1 | One Way Dungeon, Theseus Adventure, Emacs, Exophobia, Open-Source e Pleroma](https://img.youtube.com/vi/p7FrTaukioI/0.jpg)](https://www.youtube.com/watch?v=p7FrTaukioI) 
+[![devPT - Meetup #1 | One Way Dungeon, Theseus Adventure, Emacs, Exophobia, Open-Source e Pleroma](https://img.youtube.com/vi/p7FrTaukioI/0.jpg)](https://www.youtube.com/watch?v=p7FrTaukioI)
 
 <br />Convidamo-vos também a <a href="https://www.youtube.com/channel/UCSdFPD8uln_GtSoV8LgF1RQ?sub_confirmation=1" target="_blank">subscrever o canal</a> para receberem futuras notificações de novos eventos.
 
