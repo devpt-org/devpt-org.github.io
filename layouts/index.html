@@ -1,6 +1,6 @@
 {{ define "hero" }}
 <div class="ui-hero">
-  <div class="ui-hero__container">
+  <div class="ui-hero__container container mx-auto">
     <div class="ui-hero__image">
       <img  src="/images/d-hero.svg" alt="devPT Hero">
     </div>
@@ -16,8 +16,8 @@
 {{ end }}
 
 {{ define "main" }}
-<section class="ui-up-values">
-  <div class="ui-up-values__container">
+<section class="ui-up-values flex">
+  <div class="ui-up-values__container container mx-auto flex-1">
     <div class="ui-up-values__grid">
       <div class="ui-up-values__block">
         <h2 class="ui-up-values__title">Social</h2>
@@ -39,12 +39,13 @@
       </div>
     </div>
   </div>
+ 
 </section>
 
 <section class="ui-down-values">
   <div class="ui-down-values__container">
-    <div class="ui-down-values__grid">
-      <div class="ui-down-values__figure">
+    <div class="ui-down-values__grid container mx-auto">
+      <div class="ui-down-values__figure relative pr-4">
         <img src="/images/nature.svg" alt="Nature">
       </div>
 
@@ -62,6 +63,8 @@
         <h2 class="ui-down-values__title">Showcase</h2>
         <p class="ui-down-values__descriptor">Ajudar à partilha de projetos de índole pessoal.</p>
       </div>
+
+      
     </div>
   </div>
 </section>
@@ -69,14 +72,16 @@
 
 {{ define "more" }}
 <section class="ui-community">
-  <div class="ui-community__cover"></div>
-  <div class="ui-community-message">
-    <h1 class="ui-community__title">A nossa comunidade!</h1>
-    <a class="ui-community__button" href="https://discord.gg/52apEBYQb2" target="_blank">Participa</a>
-  </div>
   {{ $random := shuffle $.Site.Data.users | first 50 }}
   {{ range $random }}
     <img class="ui-community__avatar" src="{{ .avatar }}">
   {{ end }}
+  <div class="ui-community__cover"></div>
+  <div class="ui-community-message">
+    <div class="container mx-auto px-6 md:px-0">
+      <h1 class="ui-community__title">A nossa comunidade!</h1>
+    <a class="ui-community__button" href="https://discord.gg/52apEBYQb2" target="_blank">Participa</a>
+    </div>
+  </div>
 </section>
 {{ end }}
