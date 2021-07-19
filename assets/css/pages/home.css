@@ -71,8 +71,17 @@
   justify-content: center;
 }
 
-.ui-community__title {
-  @apply text-6xl mb-4 text-gray-500 dark:text-white-50 font-bold;
+@media screen and (min-width: 601px) {
+  .ui-community__title {
+    @apply text-6xl mb-4 text-gray-500 dark:text-white-50 font-bold;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .ui-community__title {
+    @apply text-2xl text-center mb-4 text-gray-500 dark:text-white-50 font-bold;
+  }
 }
 
 .ui-community__button {
