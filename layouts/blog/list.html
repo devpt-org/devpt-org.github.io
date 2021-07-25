@@ -5,7 +5,7 @@
   {{ $featuredPost := ( where (where .Site.Pages "Type" "blog") ".Params.featured" "=" true )}}
   {{ $latestBlogPost := ( where (where .Site.Pages "Type" "blog") ".Params.featured" "!=" true ).ByDate }}
 
-  <header class="ui-blog-list">
+  <header class="ui-blog-list container mx-auto">
       {{ range (first 1 $featuredPost) }}
         <div onclick="goToURL({{ .Permalink }})" class="ui-blog-card ui-blog__featured shadow-md" style="background-image: linear-gradient(gray, rgb(19, 17, 17)), url('{{ .Params.featured_image }}')">
           <div class="ui-blog-card__feature">
@@ -76,7 +76,7 @@
 {{ define "main" }}
 <hr class="border-gray-50 dark:border-gray-900 my-6">
 
-<div class="grid grid-cols-1 md:grid-cols-4 gap-4 p-6">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 p-6 container mx-auto">
   {{ range .Pages }}
 
     <article class="ui-blog-article rounded-lg">
