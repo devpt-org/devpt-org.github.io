@@ -8,7 +8,7 @@
   ],
   "description": "devPt community website",
   "devDependencies": {
-    "@babel/cli": "^7.12.17",
+    "@babel/cli": "^7.18.10",
     "@babel/core": "^7.12.17",
     "@babel/preset-env": "^7.12.17",
     "@fortawesome/fontawesome-free": "^5.15.2",
