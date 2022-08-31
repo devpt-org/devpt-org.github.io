@@ -11,7 +11,7 @@
     "@babel/cli": "^7.12.17",
     "@babel/core": "^7.12.17",
     "@babel/preset-env": "^7.12.17",
-    "@fortawesome/fontawesome-free": "^5.15.2",
+    "@fortawesome/fontawesome-free": "^6.2.0",
     "@fullhuman/postcss-purgecss": "^4.0.0",
     "@tailwindcss/typography": "^0.4.0",
     "alpinejs": "^2.8.0",
