@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "https://devpt.co/"
 disableAliases = true
 disableHugoGeneratorInject = true
 enableEmoji = true

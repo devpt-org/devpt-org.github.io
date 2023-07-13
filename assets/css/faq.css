@@ -1,0 +1,20 @@
+body.faq h1 {
+  @apply text-3xl font-light block dark:text-white-50;
+}
+
+body.faq article {
+  @apply text-lg font-light block dark:text-white-50;
+}
+
+body.faq article p {
+  @apply mt-2;
+}
+
+body.faq article h2 {
+  @apply text-2xl text-orange-600 mt-8 mb-4 font-bold;
+}
+
+body.faq article ul {
+  list-style-type: disc;
+  @apply pl-8;
+}
