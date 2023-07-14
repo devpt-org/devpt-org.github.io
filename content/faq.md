@@ -3,7 +3,7 @@ type: faq
 title: "Perguntas frequentes"
 ---
 
-## Ordenado bruto, líquido, quais as diferenças?
+## Ordenado ilíquido (bruto), líquido, quais as diferenças?
 
 O ordenado base bruto é o que está no contrato, e é o valor antes de ser
 retirado impostos e segurança social. Em Portugal costuma ser discutido o valor
