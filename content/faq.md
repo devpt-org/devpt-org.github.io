@@ -9,7 +9,8 @@ O ordenado base bruto é o que está no contrato, e é o valor antes de ser
 retirado impostos e segurança social. Em Portugal costuma ser discutido o valor
 mensal, enquanto que noutros países o habitual é falar-se do valor anual. Para
 fazer a conversão do mensal para anual multiplica-se por 14: adiciona-se o
-subsídio de férias e de natal.
+subsídio de férias e de natal. Pode haver contratos que tenham o valor mensal
+já a incluir os duodécimos, casos em que se multiplica por 12.
 
 O valor líquido é o dinheiro que "cai na conta" todos os meses: normalmente
 calculado depois de deduzidas essas taxas, e acrescentados o subsídio de
