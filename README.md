@@ -1,3 +1,5 @@
+<p align="center">Este repositório foi arquivado em prol da nova versão do site disponível em <a href="https://github.com/devpt-org/site">https://github.com/devpt-org/site</a>.</p>
+
 <h1 align="center">devPT</h1>
 
 <a href="https://devpt-org.github.io/" title="devPT">
